@@ -41,7 +41,7 @@ public protocol CloudKitRecordRepresentable {
     /// If you're just storing/retrieving data on the public database or just not using CloudKit's advanced sync capabilities, then it's less important to keep this metadata around.
     /// Think of whether you're going to be uploading the same "instance" of your model to CloudKit multiple times, for example to update some of its properties.
     /// If that's the case, then you should make sure that this metadata is present when encoding your updated model prior to uploading it to CloudKit again.
-    var cloudKitSystemFields: Data? { get }
+    var cloudKitSystemFields: Data? { get set }
 
     /// The `recordType` for this type when encoded as a `CKRecord`.
     ///
