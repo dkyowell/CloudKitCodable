@@ -80,9 +80,9 @@ public extension CloudKitRecordRepresentable {
     /// - note: If you already have a unique identifier for your data type, then you probably want to implement this property, returning your existing identifier.
     ///
     /// **Default implementation**: ``cloudKitIdentifier-uk1q``
-    var cloudKitIdentifier: String {
-        return UUID().uuidString
-    }
+//    var cloudKitIdentifier: String {
+//        return UUID().uuidString
+//    }
 }
 
 /// Implemented by types that can be encoded into `CKRecord` with ``CloudKitRecordEncoder``.
