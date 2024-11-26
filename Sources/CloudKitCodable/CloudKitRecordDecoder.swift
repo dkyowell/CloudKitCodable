@@ -109,7 +109,7 @@ extension _CloudKitRecordDecoder {
 
 extension _CloudKitRecordDecoder.KeyedContainer: KeyedDecodingContainerProtocol {
     var allKeys: [Key] {
-        return self.record.allKeys().compactMap { Key(stringValue: $0) }
+        return self.record.allKeys().compactMap { Key(stringValue: $0) } + [Key(stringValue: _CKIdentifierKeyName)!]
     }
 
     func contains(_ key: Key) -> Bool {
@@ -138,6 +138,7 @@ extension _CloudKitRecordDecoder.KeyedContainer: KeyedDecodingContainerProtocol 
         if key.stringValue == _CKIdentifierKeyName {
             return record.recordID.recordName as! T
         }
+        
 
         // Bools are encoded as Int64 in CloudKit
         if type == Bool.self {
