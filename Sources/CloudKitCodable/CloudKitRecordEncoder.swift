@@ -207,7 +207,9 @@ extension _CloudKitRecordEncoder.KeyedContainer: KeyedEncodingContainerProtocol 
 
             return
         }
-
+        guard key.stringValue != _CKIdentifierKeyName else {
+            return
+        }
         storage[key.stringValue] = try produceCloudKitValue(for: value, withKey: key)
     }
 
